@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <unistd.h>
 #include "strerr.h"
 #include "stralloc.h"
 #include "getln.h"
@@ -6,6 +8,8 @@
 #include "fmt.h"
 #include "byte.h"
 #include "cdb_make.h"
+#include "open.h"
+#include "scan.h"
 
 #define FATAL "tcprules: fatal: "
 
@@ -87,7 +91,7 @@ void doaddressdata(void)
   if (cdb_make_add(&c,address.s,address.len,data.s,data.len) == -1) die_write();
 }
 
-main(int argc,char **argv)
+void main(int argc,char **argv)
 {
   int colon;
   char *x;

@@ -1,3 +1,4 @@
+#include <unistd.h>
 #include "byte.h"
 #include "str.h"
 #include "scan.h"
@@ -153,7 +154,7 @@ void rblsmtpd(void)
   _exit(0);
 }
 
-main(int argc,char **argv,char **envp)
+void main(int argc,char **argv,char **envp)
 {
   int flagwantdefaultrbl = 1;
   char *x;

@@ -1,4 +1,7 @@
-main()
+#include <unistd.h>
+#include <grp.h>
+
+void main()
 {
   short x[4];
  

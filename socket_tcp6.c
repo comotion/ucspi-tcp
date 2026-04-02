@@ -3,6 +3,7 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <errno.h>
+#include <unistd.h>
 #include "ndelay.h"
 #include "socket.h"
 #include "haveip6.h"

@@ -1,7 +1,7 @@
 #include "buffer.h"
 #include "exit.h"
 
-main()
+void main()
 {
   register int n;
   register char *x;

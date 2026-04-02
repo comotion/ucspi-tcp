@@ -1,3 +1,5 @@
+#include <unistd.h>
+#include <signal.h>
 #include "sig.h"
 #include "wait.h"
 #include "fork.h"
@@ -18,7 +20,7 @@ int myread(int fd,char *buf,int len)
   return read(fd,buf,len);
 }
 
-main()
+void main()
 {
   int pid;
   int wstat;

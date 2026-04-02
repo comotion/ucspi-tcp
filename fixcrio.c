@@ -1,3 +1,4 @@
+#include <unistd.h>
 #include "sig.h"
 #include "buffer.h"
 #include "strerr.h"
@@ -6,6 +7,7 @@
 #include "exit.h"
 #include "iopause.h"
 #include "pathexec.h"
+#include "fd.h"
 
 #define FATAL "fixcrio: fatal: "
 
@@ -126,7 +128,7 @@ void doit(int fdleft,int fdright)
   _exit(0);
 }
 
-main(int argc,char **argv,char **envp)
+void main(int argc,char **argv,char **envp)
 {
   int piin[2];
   int piout[2];

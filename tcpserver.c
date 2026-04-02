@@ -1,6 +1,7 @@
 #include <sys/types.h>
 #include <sys/param.h>
 #include <netdb.h>
+#include <unistd.h>
 #include "uint16.h"
 #include "str.h"
 #include "byte.h"
@@ -28,6 +29,13 @@
 #include "rules.h"
 #include "sig.h"
 #include "dns.h"
+int socket_ipoptionskill(int s);
+int socket_tcpnodelay(int s);
+unsigned int ip6_fmt(char *s,char ip[16]);
+int dns_name6_domain(char name[DNS_NAME6_DOMAIN],char ip[16]);
+int dns_name6(stralloc *out,char ip[16]);
+
+
 
 int forcev6 = 0;
 int verbosity = 1;
@@ -323,7 +331,7 @@ void sigchld()
   }
 }
 
-main(int argc,char **argv)
+void main(int argc,char **argv)
 {
   char *hostname;
   char *portname;

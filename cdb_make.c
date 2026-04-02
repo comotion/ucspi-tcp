@@ -1,5 +1,6 @@
 /* Public domain. */
 
+#include <sys/types.h>
 #include "readwrite.h"
 #include "seek.h"
 #include "error.h"

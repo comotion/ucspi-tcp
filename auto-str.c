@@ -1,3 +1,4 @@
+#include <unistd.h>
 #include "buffer.h"
 #include "readwrite.h"
 #include "exit.h"
@@ -10,7 +11,7 @@ void puts(char *s)
   if (buffer_puts(&b,s) == -1) _exit(111);
 }
 
-main(int argc,char **argv)
+void main(int argc,char **argv)
 {
   char *name;
   char *value;

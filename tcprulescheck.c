@@ -1,8 +1,10 @@
+#include <unistd.h>
 #include "byte.h"
 #include "buffer.h"
 #include "strerr.h"
 #include "env.h"
 #include "rules.h"
+#include "open.h"
 
 void found(char *data,unsigned int datalen)
 {
@@ -31,7 +33,7 @@ void found(char *data,unsigned int datalen)
   _exit(0);
 }
 
-main(int argc,char **argv)
+void main(int argc,char **argv)
 {
   char *fnrules;
   int fd;

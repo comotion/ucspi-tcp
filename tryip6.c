@@ -2,7 +2,7 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 
-main() {
+void main() {
   struct sockaddr_in6 sa;
   sa.sin6_family = PF_INET6;
 }

@@ -1,6 +1,8 @@
+#include <unistd.h>
+#include <grp.h>
 #include "exit.h"
 
-main()
+void main()
 {
   short x[4];
 

@@ -1,5 +1,6 @@
 #include <sys/types.h>
 #include <sys/param.h>
+#include <unistd.h>
 #include <netdb.h>
 #include "sig.h"
 #include "exit.h"
@@ -22,6 +23,9 @@
 #include "remoteinfo.h"
 #include "dns.h"
 #include "byte.h"
+unsigned int ip6_fmt(char *s,char ip[16]);
+int socket_tcpnodelay(int s);
+int dns_name6(stralloc *out,char ip[16]);
 
 #define FATAL "tcpclient: fatal: "
 #define CONNECT "tcpclient: unable to connect to "
@@ -70,7 +74,7 @@ char ipstr[IP6_FMT];
 
 char seed[128];
 
-main(int argc,char **argv)
+void main(int argc,char **argv)
 {
   int fakev4=0;
   unsigned long u;

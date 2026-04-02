@@ -1,3 +1,4 @@
+#include <unistd.h>
 #include "fmt.h"
 #include "buffer.h"
 #include "socket.h"
@@ -9,7 +10,7 @@
 static struct taia now;
 static struct taia deadline;
 
-static int mywrite(int fd,char *buf,int len)
+static ssize_t mywrite(int fd,const void *buf,size_t len)
 {
   iopause_fd x;
 
@@ -27,7 +28,7 @@ static int mywrite(int fd,char *buf,int len)
   return write(fd,buf,len);
 }
 
-static int myread(int fd,char *buf,int len)
+static ssize_t myread(int fd,void *buf,size_t len)
 {
   iopause_fd x;
 

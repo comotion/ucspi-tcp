@@ -2,7 +2,7 @@
 #include <fcntl.h>
 #include <poll.h>
 
-main()
+void main()
 {
   struct pollfd x;
 
